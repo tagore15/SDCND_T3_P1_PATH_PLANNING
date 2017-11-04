@@ -19,24 +19,23 @@ If we deduct there is car ahead of us in current lane running at slower speed th
 
 This code determines if right lane is safe to change. As mentioned lane change is not possible, if there is a car running at high speed from behind or it is too close to change.
 
-'''
+```
 if ((check_car_s < car_s && check_speed > ref_vel) || car_s - check_car_s < 10)
 {
     right_lane_close = true;
 }
-'''
+```
 
 Similary for left lane, we can check if is safe to change lane through similar change.
-'''
+```
 if ((check_car_s < car_s && check_speed > ref_vel) || car_s - check_car_s < 10)
 {
     left_lane_close = true;
 }
-
-'''
+```
 
 If car is not able to switch lane, it reduces its speed. It changes speed to a safer lane whenever it finds its speed is lesser than velocity of forward car in right or left lane.     
-'''
+```
 if (current_lane_close)
 {
     ref_vel -= .224;
@@ -64,6 +63,6 @@ if (current_lane_close)
 
     }
 }
-'''
+```
 
 Our car was able to complete the track successfully with above software pipeline. There is scope of improvement by tuning threshold values and better prediction model. 
