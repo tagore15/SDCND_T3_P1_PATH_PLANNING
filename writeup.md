@@ -14,8 +14,7 @@ We use Frenet coordinates to determine our location with reference to center of 
 
 To avoid sudden acceleration and jerk, we increase required velocity in units. We use spline library to smooth our path to avoid latitudinal jerks. We generate few endpoints for our next waypoints list and then plot a spline through these points. We can then find intermediate waypoints of our next trajectory through points lying on spline.      
 
-We are using sensor fusion data to detect other cars on road. We find left, right and current lane information through d coordinates.      
-If we deduct there is car ahead of us in current lane running at slower speed then we need to change lane to either left or right. We can change lane successfully if there is not a car running at slower speed in front and at higher speed from behind in new lane.    
+We are using sensor fusion data to detect other cars on road. We find left, right and current lane information through d coordinates. If we deduct there is car ahead of us in current lane running at slower speed then we need to change lane to either left or right. We can change lane successfully if there is not a car running at slower speed in front or at higher speed from behind in new lane.    
 
 This code determines if right lane is safe to change. As mentioned lane change is not possible, if there is a car running at high speed from behind or it is too close to change.
 
